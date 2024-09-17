@@ -23,12 +23,11 @@ class _AnimeDetailsState extends State<AnimeDetails> {
   @override
   void initState() {
     _controller = YoutubePlayerController(
-      initialVideoId: widget.anime.trailer!.youtubeId ?? 'gv2cLLb6YZ4',
+      initialVideoId: widget.anime.trailer!.youtubeId ?? '6R5EqW4nOik',
       flags: const YoutubePlayerFlags(
         autoPlay: false,
       ),
     );
-    print(_controller.metadata);
     super.initState();
   }
 
@@ -188,9 +187,6 @@ class _AnimeDetailsState extends State<AnimeDetails> {
                       playedColor: CustomColor.blue,
                       handleColor: CustomColor.background,
                     ),
-                    onReady: () {
-                      print('ready');
-                    },
                   ),
                   addVerticalSpace(20),
                 ],

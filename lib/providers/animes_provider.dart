@@ -5,14 +5,27 @@ import 'package:flutter/material.dart';
 class AnimesProvider extends ChangeNotifier {
   List<Anime> topAnime = [];
   List<Anime> seasonAnime = [];
+  List<Anime> searchAnime = [];
   bool isLoading = true;
-  int page = 1;
+  bool isSearchLoading = false;
+  int top = 1;
+  int season = 1;
+  int search = 1;
+  String searchText = '';
 
   void loadData() async {
-    topAnime = await AnimeServices.fetchRankedAnimes(page);
-    seasonAnime = await AnimeServices.fetchSeasonAnimes(page);
-    print(seasonAnime.first.title);
+    topAnime = await AnimeServices.fetchRankedAnimes(top);
+    seasonAnime = await AnimeServices.fetchSeasonAnimes(season);
     isLoading = false;
+    notifyListeners();
+  }
+
+  void searchData() async {
+    isSearchLoading = true;
+    notifyListeners();
+    searchAnime = await AnimeServices.searchAnimes(searchText, search);
+    print(searchAnime.first.title!);
+    isSearchLoading = false;
     notifyListeners();
   }
 }

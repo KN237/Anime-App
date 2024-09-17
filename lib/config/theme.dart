@@ -7,7 +7,7 @@ final darkTheme = ThemeData.dark().copyWith(
   scaffoldBackgroundColor: CustomColor.background,
   textTheme: GoogleFonts.interTextTheme().copyWith(
     titleLarge: const TextStyle(
-        fontSize: 32, color: CustomColor.white, fontWeight: FontWeight.bold),
+        fontSize: 25, color: CustomColor.white, fontWeight: FontWeight.bold),
     bodyLarge: const TextStyle(
         fontSize: 18, color: CustomColor.white, fontWeight: FontWeight.normal),
     bodyMedium: const TextStyle(

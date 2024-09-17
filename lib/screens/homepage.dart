@@ -3,18 +3,18 @@ import 'dart:math';
 import 'package:anime_app/config/constant.dart';
 import 'package:anime_app/models/anime.dart';
 import 'package:anime_app/providers/animes_provider.dart';
+import 'package:anime_app/screens/search_screen.dart';
 import 'package:anime_app/widgets/custom_carousel_dots.dart';
 import 'package:anime_app/widgets/custom_carousel_item.dart';
 import 'package:anime_app/widgets/horizontal_list.dart';
 import 'package:anime_app/widgets/section_title.dart';
 import 'package:anime_app/widgets/spacer.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 final random = Random();
-int number = random.nextInt(23);
+int number = random.nextInt(21);
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -71,7 +71,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
   void populate() {
     if (!context.read<AnimesProvider>().isLoading) {
       list =
-          context.read<AnimesProvider>().topAnime.sublist(number, number + 3);
+          context.read<AnimesProvider>().topAnime.sublist(number, number + 4);
       myList = List.of(context.watch<AnimesProvider>().topAnime);
       myList.sort((a, b) => a.popularity!.compareTo(b.popularity!));
     }
@@ -82,23 +82,29 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
     populate();
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Anime World',
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium!
-              .copyWith(color: CustomColor.white, fontSize: 23),
         ),
-        actions: const [Icon(Icons.search)],
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (ctx) {
+                  return const SearchScreen();
+                }),
+              );
+            },
+            icon: const Icon(Icons.search),
+          )
+        ],
       ),
       body: context.watch<AnimesProvider>().isLoading
           ? SizedBox(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
-              child: Center(
-                child: LottieBuilder.asset(
-                  'assets/images/loader.json',
-                  width: 250,
+              child: const Center(
+                child: CircularProgressIndicator(
+                  color: CustomColor.blue,
                 ),
               ),
             )
