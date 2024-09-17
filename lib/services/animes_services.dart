@@ -46,7 +46,6 @@ class AnimeServices {
     final response = await get(
       Uri.parse('$searchUrl${request.trim()}&page=$page'),
     );
-    print('$searchUrl${request.trim()}&page=$page');
     if (response.statusCode == 200) {
       for (Map<String, dynamic> element in jsonDecode(response.body)['data']) {
         temp.add(

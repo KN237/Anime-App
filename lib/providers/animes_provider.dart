@@ -24,7 +24,6 @@ class AnimesProvider extends ChangeNotifier {
     isSearchLoading = true;
     notifyListeners();
     searchAnime = await AnimeServices.searchAnimes(searchText, search);
-    print(searchAnime.first.title!);
     isSearchLoading = false;
     notifyListeners();
   }
