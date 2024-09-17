@@ -1,16 +1,20 @@
-# anime_app
+<div align='center'>
+<image src='./assets/images/anim_logo.png' alt='logo' width="250px"/>
 
-A new Flutter project.
 
-## Getting Started
+![badge-1](https://img.shields.io/badge/Dart-Flutter-blue)
+![badge-1](https://img.shields.io/badge/Languages-+2-yellow)
+![badge-1](https://img.shields.io/badge/Version-1.0.0-blue?logo=github&style=social)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+[About]() | [Technologies]() | [Requirements]() | [Getting Started]() | [Inspirations]()
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+<image src='./assets/images/1.jpeg' alt='logo' width="150px"/> 
+ <image src='./assets/images/2.jpeg' alt='logo' width="150px"/>
+    <image src='./assets/images/4.jpeg' alt='logo' width="150px"/>
+      <image src='./assets/images/5.jpeg' alt='logo' width="150px"/>
+
+</div>
