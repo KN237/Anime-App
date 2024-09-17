@@ -14,6 +14,7 @@
 
 <image src='./assets/images/1.jpeg' alt='logo' width="150px"/> 
  <image src='./assets/images/2.jpeg' alt='logo' width="150px"/>
+  <image src='./assets/images/3.jpeg' alt='logo' width="150px"/>
     <image src='./assets/images/4.jpeg' alt='logo' width="150px"/>
       <image src='./assets/images/5.jpeg' alt='logo' width="150px"/>
 
